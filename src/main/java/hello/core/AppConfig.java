@@ -18,6 +18,7 @@ public class AppConfig {
     // MemoryMemberRepository()를 반환하는 메소드 생성, 나중에 데이터베이스에 관해 변동 사항이 있을 경우 이 부분만 수정하면 됨
     @Bean
     public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
@@ -28,17 +29,19 @@ public class AppConfig {
     }
 
 
-
-
     // ------------ 생성자를 통해 구현체를 주입 하는 메소드 작성 ------------
     @Bean
     public MemberService memberService() {
+        System.out.println("call AppConfig.memberService");
         return new MemberServiceImpl(memberRepository()); // 생성해둔 메소드를 통해 반환 된 객체를 생성자로 전달
     }
 
     @Bean
     public OrderService orderService() {
-        return new OrderServiceImpl(memberRepository(), discountPolicy()); // 생성해둔 메소드를 통해 반환 된 객체를 생성자로 전달
+        System.out.println("call AppConfig.orderService");
+    // return new OrderServiceImpl(memberRepository(), discountPolicy()); // 생성해둔 메소드를 통해 반환 된 객체를 생성자로 전달
+        return null;
     }
+
 
 }
