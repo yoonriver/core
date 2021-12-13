@@ -39,8 +39,7 @@ public class AppConfig {
     @Bean
     public OrderService orderService() {
         System.out.println("call AppConfig.orderService");
-    // return new OrderServiceImpl(memberRepository(), discountPolicy()); // 생성해둔 메소드를 통해 반환 된 객체를 생성자로 전달
-        return null;
+        return new OrderServiceImpl(memberRepository(), discountPolicy()); // 생성해둔 메소드를 통해 반환 된 객체를 생성자로 전달
     }
 
 
