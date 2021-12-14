@@ -1,4 +1,4 @@
-package hello.core.scan.filter;
+package hello.core.filter;
 
 @MyExcludeComponent
 public class BeanB {

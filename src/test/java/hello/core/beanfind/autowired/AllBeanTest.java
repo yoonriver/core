@@ -1,4 +1,4 @@
-package hello.core.autowired;
+package hello.core.beanfind.autowired;
 
 import hello.core.AutoAppConfig;
 import hello.core.discount.DiscountPolicy;
